@@ -106,7 +106,8 @@ var app = builder.Build();
 // Seed the database with initial data
 using (var scope = app.Services.CreateScope())
 {
-    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();    try 
+    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    try
     {        // Apply any pending migrations
         context.Database.Migrate();
         

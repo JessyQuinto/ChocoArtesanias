@@ -13,3 +13,4 @@ C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\refint\ChocoArtesanias.Application.dll
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.pdb
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ref\ChocoArtesanias.Application.dll
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.sourcelink.json

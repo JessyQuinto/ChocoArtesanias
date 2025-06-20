@@ -9,3 +9,4 @@ C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Domain\obj\Debug
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Domain\obj\Debug\net9.0\refint\ChocoArtesanias.Domain.dll
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Domain\obj\Debug\net9.0\ChocoArtesanias.Domain.pdb
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Domain\obj\Debug\net9.0\ref\ChocoArtesanias.Domain.dll
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Domain\obj\Debug\net9.0\ChocoArtesanias.Domain.sourcelink.json

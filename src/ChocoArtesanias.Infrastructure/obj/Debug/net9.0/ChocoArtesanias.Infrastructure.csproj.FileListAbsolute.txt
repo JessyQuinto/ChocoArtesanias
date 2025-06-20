@@ -17,3 +17,4 @@ C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\o
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.pdb
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.genruntimeconfig.cache
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ref\ChocoArtesanias.Infrastructure.dll
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.sourcelink.json

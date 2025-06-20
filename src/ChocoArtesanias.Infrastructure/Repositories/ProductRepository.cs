@@ -15,9 +15,7 @@ public class ProductRepository : IProductRepository
     {
         _context = context;
         _logger = logger;
-    }
-
-    public async Task<Product?> GetByIdAsync(int id)
+    }    public async Task<Product?> GetByIdAsync(Guid id)
     {
         return await _context.Products
             .Include(p => p.Category)
@@ -225,9 +223,7 @@ public class ProductRepository : IProductRepository
             _logger.LogError(ex, "Error al crear producto");
             throw;
         }
-    }
-
-    public async Task DeleteAsync(int id)
+    }    public async Task DeleteAsync(Guid id)
     {
         try
         {

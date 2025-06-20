@@ -31,8 +31,8 @@ namespace ChocoArtesanias.Infrastructure.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -57,11 +57,9 @@ namespace ChocoArtesanias.Infrastructure.Migrations
 
             modelBuilder.Entity("ChocoArtesanias.Domain.Entities.Category", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -116,7 +114,7 @@ namespace ChocoArtesanias.Infrastructure.Migrations
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("Subtotal")
                         .HasColumnType("decimal(18,2)");
@@ -132,10 +130,17 @@ namespace ChocoArtesanias.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CreatedAt")
+                        .HasDatabaseName("IX_Order_CreatedAt");
+
                     b.HasIndex("OrderNumber")
                         .IsUnique();
 
-                    b.HasIndex("UserId");
+                    b.HasIndex("Status")
+                        .HasDatabaseName("IX_Order_Status");
+
+                    b.HasIndex("UserId")
+                        .HasDatabaseName("IX_Order_UserId");
 
                     b.ToTable("Orders");
                 });
@@ -149,8 +154,8 @@ namespace ChocoArtesanias.Infrastructure.Migrations
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("int");
@@ -169,11 +174,9 @@ namespace ChocoArtesanias.Infrastructure.Migrations
 
             modelBuilder.Entity("ChocoArtesanias.Domain.Entities.Producer", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("ContactAddress")
                         .HasColumnType("nvarchar(max)");
@@ -213,18 +216,16 @@ namespace ChocoArtesanias.Infrastructure.Migrations
 
             modelBuilder.Entity("ChocoArtesanias.Domain.Entities.Product", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("Artisan")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("CategoryId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("CategoryId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
@@ -258,8 +259,8 @@ namespace ChocoArtesanias.Infrastructure.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
 
-                    b.Property<int>("ProducerId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProducerId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("Rating")
                         .HasColumnType("float");
@@ -276,12 +277,19 @@ namespace ChocoArtesanias.Infrastructure.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoryId");
+                    b.HasIndex("Featured")
+                        .HasDatabaseName("IX_Product_Featured");
 
                     b.HasIndex("ProducerId");
 
                     b.HasIndex("Slug")
                         .IsUnique();
+
+                    b.HasIndex("Stock")
+                        .HasDatabaseName("IX_Product_Stock");
+
+                    b.HasIndex("CategoryId", "Featured")
+                        .HasDatabaseName("IX_Product_CategoryId_Featured");
 
                     b.ToTable("Products");
                 });
@@ -337,8 +345,8 @@ namespace ChocoArtesanias.Infrastructure.Migrations
                     b.Property<bool>("IsVerified")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ProductId")
-                        .HasColumnType("int");
+                    b.Property<Guid>("ProductId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("Rating")
                         .HasColumnType("int");

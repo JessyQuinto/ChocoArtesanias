@@ -65,7 +65,7 @@ public class OrderDto
 public class OrderItemDto
 {
     public Guid Id { get; set; }
-    public int ProductId { get; set; }
+    public Guid ProductId { get; set; }
     public OrderProductDto? Product { get; set; }
     public int Quantity { get; set; }
     public decimal UnitPrice { get; set; }
@@ -74,7 +74,7 @@ public class OrderItemDto
 
 public class OrderProductDto
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Slug { get; set; } = string.Empty;
     public string Image { get; set; } = string.Empty;

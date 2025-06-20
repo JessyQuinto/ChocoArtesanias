@@ -12,9 +12,7 @@ public class ProducerRepository : IProducerRepository
     public ProducerRepository(AppDbContext context)
     {
         _context = context;
-    }
-
-    public async Task<Producer?> GetByIdAsync(int id)
+    }    public async Task<Producer?> GetByIdAsync(Guid id)
     {
         return await _context.Producers.FindAsync(id);
     }
@@ -27,7 +25,7 @@ public class ProducerRepository : IProducerRepository
             .ToListAsync();
     }
 
-    public async Task<Producer?> GetByIdWithProductsAsync(int id)
+    public async Task<Producer?> GetByIdWithProductsAsync(Guid id)
     {
         return await _context.Producers
             .Include(p => p.Products)

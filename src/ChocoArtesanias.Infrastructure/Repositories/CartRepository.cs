@@ -24,9 +24,7 @@ public class CartRepository : ICartRepository
             .Where(c => c.UserId == userId)
             .OrderByDescending(c => c.CreatedAt)
             .ToListAsync();
-    }
-
-    public async Task<CartItem?> GetCartItemAsync(Guid userId, int productId)
+    }    public async Task<CartItem?> GetCartItemAsync(Guid userId, Guid productId)
     {
         return await _context.CartItems
             .Include(c => c.Product)

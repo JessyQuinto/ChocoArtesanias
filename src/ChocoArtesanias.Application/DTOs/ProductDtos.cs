@@ -2,7 +2,7 @@ namespace ChocoArtesanias.Application.DTOs;
 
 // Product DTOs
 public record ProductResponse(
-    int Id,
+    Guid Id,
     string Name,
     string Slug,
     string Description,
@@ -10,9 +10,9 @@ public record ProductResponse(
     decimal? DiscountedPrice,
     string Image,
     List<string> Images,
-    int CategoryId,
+    Guid CategoryId,
     string CategoryName,
-    int ProducerId,
+    Guid ProducerId,
     string ProducerName,
     int Stock,
     bool Featured,
@@ -22,7 +22,7 @@ public record ProductResponse(
     DateTime CreatedAt);
 
 public record ProductDetailResponse(
-    int Id,
+    Guid Id,
     string Name,
     string Slug,
     string Description,

@@ -32,10 +32,22 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Product>()
             .Property(p => p.DiscountedPrice)
             .HasColumnType("decimal(18,2)");
-            
-        modelBuilder.Entity<Product>()
+              modelBuilder.Entity<Product>()
             .HasIndex(p => p.Slug)
             .IsUnique();
+            
+        // Performance indexes for Product
+        modelBuilder.Entity<Product>()
+            .HasIndex(p => new { p.CategoryId, p.Featured })
+            .HasDatabaseName("IX_Product_CategoryId_Featured");
+            
+        modelBuilder.Entity<Product>()
+            .HasIndex(p => p.Stock)
+            .HasDatabaseName("IX_Product_Stock");
+            
+        modelBuilder.Entity<Product>()
+            .HasIndex(p => p.Featured)
+            .HasDatabaseName("IX_Product_Featured");
             
         // Category configurations
         modelBuilder.Entity<Category>()
@@ -107,10 +119,22 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Order>()
             .Property(o => o.Total)
             .HasColumnType("decimal(18,2)");
-            
-        modelBuilder.Entity<Order>()
+              modelBuilder.Entity<Order>()
             .HasIndex(o => o.OrderNumber)
             .IsUnique();
+            
+        // Performance indexes for Order
+        modelBuilder.Entity<Order>()
+            .HasIndex(o => o.UserId)
+            .HasDatabaseName("IX_Order_UserId");
+            
+        modelBuilder.Entity<Order>()
+            .HasIndex(o => o.CreatedAt)
+            .HasDatabaseName("IX_Order_CreatedAt");
+            
+        modelBuilder.Entity<Order>()
+            .HasIndex(o => o.Status)
+            .HasDatabaseName("IX_Order_Status");
             
         // OrderItem configurations
         modelBuilder.Entity<OrderItem>()

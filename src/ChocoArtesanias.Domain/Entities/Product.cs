@@ -2,7 +2,7 @@ namespace ChocoArtesanias.Domain.Entities;
 
 public class Product
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string Name { get; set; } = string.Empty;
     public string Slug { get; set; } = string.Empty;
     public string Description { get; set; } = string.Empty;
@@ -16,10 +16,10 @@ public class Product
     public string Artisan { get; set; } = string.Empty;
     public string Origin { get; set; } = string.Empty;
 
-    public int CategoryId { get; set; }
+    public Guid CategoryId { get; set; }
     public Category? Category { get; set; }
 
-    public int ProducerId { get; set; }
+    public Guid ProducerId { get; set; }
     public Producer? Producer { get; set; }
     
     public ICollection<Review> Reviews { get; set; } = new List<Review>();

@@ -19,10 +19,8 @@ public class ProducersController : ControllerBase
     {
         var producers = await _producerService.GetAllProducersAsync();
         return Ok(new { Success = true, Data = producers });
-    }
-
-    [HttpGet("{id:int}")]
-    public async Task<IActionResult> GetProducerById(int id)
+    }    [HttpGet("{id}")]
+    public async Task<IActionResult> GetProducerById(Guid id)
     {
         var producer = await _producerService.GetProducerByIdAsync(id);
         

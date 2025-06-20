@@ -1,20 +1,20 @@
 namespace ChocoArtesanias.Application.DTOs;
 
 // Cart DTOs
-public record CartItemRequest(int ProductId, int Quantity);
+public record CartItemRequest(Guid ProductId, int Quantity);
 
 public record UpdateCartItemRequest(int Quantity);
 
 public record CartItemResponse(
     string Id,
-    int ProductId,
+    Guid ProductId,
     ProductCartInfo Product,
     int Quantity,
     decimal UnitPrice,
     decimal TotalPrice);
 
 public record ProductCartInfo(
-    int Id,
+    Guid Id,
     string Name,
     string Image,
     decimal Price,

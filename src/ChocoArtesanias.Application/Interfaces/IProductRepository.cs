@@ -4,7 +4,7 @@ namespace ChocoArtesanias.Application.Interfaces;
 
 public interface IProductRepository
 {
-    Task<Product?> GetByIdAsync(int id);
+    Task<Product?> GetByIdAsync(Guid id);
     Task<Product?> GetBySlugAsync(string slug);
     Task<IEnumerable<Product>> GetAllAsync();
     Task<IEnumerable<Product>> GetFeaturedAsync();
@@ -23,5 +23,5 @@ public interface IProductRepository
     Task<IEnumerable<Product>> SearchAsync(string query, string? category = null, decimal? minPrice = null, decimal? maxPrice = null);
     Task<Product> UpdateAsync(Product product);
     Task<Product> CreateAsync(Product product);
-    Task DeleteAsync(int id);
+    Task DeleteAsync(Guid id);
 }

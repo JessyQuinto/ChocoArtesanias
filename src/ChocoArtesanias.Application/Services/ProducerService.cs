@@ -26,9 +26,7 @@ public class ProducerService
             p.FoundationYear,
             p.Products.Count
         ));
-    }
-
-    public async Task<ProducerDetailResponse?> GetProducerByIdAsync(int id)
+    }    public async Task<ProducerDetailResponse?> GetProducerByIdAsync(Guid id)
     {
         var producer = await _producerRepository.GetByIdWithProductsAsync(id);
         if (producer == null) return null;
@@ -58,11 +56,10 @@ public class ProducerService
             producer.ContactPhone,
             producer.ContactEmail,
             producer.ContactAddress
-        );
-
-        return new ProducerDetailResponse(
+        );        return new ProducerDetailResponse(
             producer.Id,
             producer.Name,
+            producer.Name.ToLowerInvariant().Replace(" ", "-"),  // Generate slug
             producer.Description,
             producer.Location,
             producer.ImageUrl,

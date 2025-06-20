@@ -4,7 +4,7 @@ namespace ChocoArtesanias.Application.Interfaces;
 
 public interface IProducerRepository
 {
-    Task<Producer?> GetByIdAsync(int id);
+    Task<Producer?> GetByIdAsync(Guid id);
     Task<IEnumerable<Producer>> GetAllAsync();
-    Task<Producer?> GetByIdWithProductsAsync(int id);
+    Task<Producer?> GetByIdWithProductsAsync(Guid id);
 }

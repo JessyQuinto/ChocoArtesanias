@@ -2,7 +2,7 @@ namespace ChocoArtesanias.Application.DTOs;
 
 // Category DTOs
 public record CategoryResponse(
-    int Id,
+    Guid Id,
     string Name,
     string Slug,
     string Description,
@@ -10,7 +10,7 @@ public record CategoryResponse(
     int ProductCount);
 
 public record CategoryDetailResponse(
-    int Id,
+    Guid Id,
     string Name,
     string Slug,
     string Description,
@@ -20,7 +20,7 @@ public record CategoryDetailResponse(
 
 // Producer DTOs
 public record ProducerResponse(
-    int Id,
+    Guid Id,
     string Name,
     string Description,
     string Location,
@@ -30,8 +30,9 @@ public record ProducerResponse(
     int ProductCount);
 
 public record ProducerDetailResponse(
-    int Id,
+    Guid Id,
     string Name,
+    string Slug,
     string Description,
     string Location,
     string Image,

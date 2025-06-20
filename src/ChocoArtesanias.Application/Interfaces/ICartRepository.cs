@@ -5,7 +5,7 @@ namespace ChocoArtesanias.Application.Interfaces;
 public interface ICartRepository
 {
     Task<IEnumerable<CartItem>> GetCartItemsAsync(Guid userId);
-    Task<CartItem?> GetCartItemAsync(Guid userId, int productId);
+    Task<CartItem?> GetCartItemAsync(Guid userId, Guid productId);
     Task AddCartItemAsync(CartItem cartItem);
     Task UpdateCartItemAsync(CartItem cartItem);
     Task RemoveCartItemAsync(Guid cartItemId, Guid userId);

@@ -11,10 +11,10 @@ C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\o
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.AssemblyInfoInputs.cache
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.AssemblyInfo.cs
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.sourcelink.json
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArt.AE05C981.Up2Date
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.dll
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\refint\ChocoArtesanias.Infrastructure.dll
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.pdb
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.genruntimeconfig.cache
 C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ref\ChocoArtesanias.Infrastructure.dll
-C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Infrastructure\obj\Debug\net9.0\ChocoArtesanias.Infrastructure.sourcelink.json

@@ -1,8 +1,6 @@
-using ChocoArtesanias.Application.Interfaces;
-using ChocoArtesanias.Application.Services;
+using ChocoArtesanias.Application;
+using ChocoArtesanias.Infrastructure;
 using ChocoArtesanias.Infrastructure.Data;
-using ChocoArtesanias.Infrastructure.Repositories;
-using ChocoArtesanias.Infrastructure.Services;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -15,37 +13,17 @@ var builder = WebApplication.CreateBuilder(args);
 // Controllers
 builder.Services.AddControllers();
 
-// Database Context
-builder.Services.AddDbContext<AppDbContext>(options =>
-{    // Use SQL Server for both development and production
-    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
+// Infrastructure layer
+builder.Services.AddInfrastructure(builder.Configuration);
 
-// Repositories
-builder.Services.AddScoped<IUserRepository, UserRepository>();
-builder.Services.AddScoped<IProductRepository, ProductRepository>();
-builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
-builder.Services.AddScoped<IProducerRepository, ProducerRepository>();
-builder.Services.AddScoped<ICartRepository, CartRepository>();
-builder.Services.AddScoped<IRefreshTokenRepository, RefreshTokenRepository>();
-builder.Services.AddScoped<IOrderRepository, OrderRepository>();
-
-// Services
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<UserService>();
-builder.Services.AddScoped<ProductService>();
-builder.Services.AddScoped<CategoryService>();
-builder.Services.AddScoped<ProducerService>();
-builder.Services.AddScoped<CartService>();
-builder.Services.AddScoped<OrderService>();
-builder.Services.AddScoped<ITokenService, TokenService>();
+// Application layer
+builder.Services.AddApplication();
 
 // Authentication
 var keyString = builder.Configuration["TokenKey"] ?? throw new Exception("TokenKey no configurada");
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
-    {
-        options.TokenValidationParameters = new TokenValidationParameters
+    {        options.TokenValidationParameters = new TokenValidationParameters
         {
             ValidateIssuerSigningKey = true,
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(keyString)),
@@ -54,7 +32,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = true,
             ValidAudience = "ChocoArtesanias-Users",
             ValidateLifetime = true,
-            ClockSkew = TimeSpan.Zero
+            ClockSkew = TimeSpan.FromMinutes(5) // More tolerant clock skew
         };
     });
 
@@ -92,11 +70,23 @@ builder.Services.AddSwaggerGen(c =>
 
 // CORS Policy
 builder.Services.AddCors(options => {
-    options.AddPolicy("AllowReactApp", policy => {
-        policy.WithOrigins("http://localhost:5173") // La URL de tu app de React
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+    if (builder.Environment.IsDevelopment())
+    {
+        options.AddPolicy("AllowReactApp", policy => {
+            policy.WithOrigins("http://localhost:5173", "http://localhost:3000", "http://localhost:5000", "https://localhost:5001")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod()
+                  .AllowCredentials();
+        });
+    }
+    else
+    {
+        options.AddPolicy("AllowReactApp", policy => {
+            policy.WithOrigins("http://localhost:5173") // Configure with production URL
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+    }
 });
 
 var app = builder.Build();
@@ -105,9 +95,10 @@ var app = builder.Build();
 
 // Seed the database with initial data
 using (var scope = app.Services.CreateScope())
-{
-    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();    try 
-    {        // Apply any pending migrations
+{    var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    try 
+    {
+        // Apply any pending migrations
         context.Database.Migrate();
         
         // Seed initial data

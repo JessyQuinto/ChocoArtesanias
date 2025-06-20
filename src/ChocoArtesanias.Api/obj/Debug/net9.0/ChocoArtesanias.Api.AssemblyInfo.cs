@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ChocoArtesanias.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1f44341b342c0e702d7345da868cb4d0bbda045f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+931b9f71353bdae58bfea8290b6d55e155d82035")]
 [assembly: System.Reflection.AssemblyProductAttribute("ChocoArtesanias.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ChocoArtesanias.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

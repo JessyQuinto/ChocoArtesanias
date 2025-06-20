@@ -1,0 +1,15 @@
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\bin\Debug\net9.0\ChocoArtesanias.Application.deps.json
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\bin\Debug\net9.0\ChocoArtesanias.Application.dll
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\bin\Debug\net9.0\ChocoArtesanias.Application.pdb
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\bin\Debug\net9.0\ChocoArtesanias.Domain.dll
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\bin\Debug\net9.0\ChocoArtesanias.Domain.pdb
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.csproj.AssemblyReference.cache
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.AssemblyInfoInputs.cache
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.AssemblyInfo.cs
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.csproj.CoreCompileInputs.cache
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArt.F5287BF3.Up2Date
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.dll
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\refint\ChocoArtesanias.Application.dll
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ChocoArtesanias.Application.pdb
+C:\Users\Jessy\Source\Repos\ChocoArtesanias\src\ChocoArtesanias.Application\obj\Debug\net9.0\ref\ChocoArtesanias.Application.dll

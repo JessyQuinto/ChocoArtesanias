@@ -1,0 +1,100 @@
+### Test Orders API Endpoints
+
+@baseUrl = http://localhost:5110
+@contentType = application/json
+
+### 1. Register a test user first
+POST {{baseUrl}}/api/auth/register
+Content-Type: {{contentType}}
+
+{
+  "firstName": "Test",
+  "lastName": "User",
+  "email": "test@example.com",
+  "password": "Password123!",
+  "confirmPassword": "Password123!",
+  "phone": "+57 300 123 4567"
+}
+
+### 2. Login to get token
+POST {{baseUrl}}/api/auth/login
+Content-Type: {{contentType}}
+
+{
+  "email": "test@example.com",
+  "password": "Password123!"
+}
+
+### 3. Get products (to add to cart)
+GET {{baseUrl}}/api/products
+
+### 4. Add product to cart (requires auth token)
+POST {{baseUrl}}/api/cart/add
+Content-Type: {{contentType}}
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "productId": 1,
+  "quantity": 2
+}
+
+### 5. Get cart items
+GET {{baseUrl}}/api/cart
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### 6. Create order (requires auth token)
+POST {{baseUrl}}/api/orders
+Content-Type: {{contentType}}
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "shippingAddress": {
+    "name": "Casa",
+    "fullName": "Test User",
+    "streetAddress": "Calle 123 #45-67",
+    "city": "Quibdó",
+    "postalCode": "27001",
+    "phone": "+57 300 123 4567"
+  },
+  "paymentMethod": "CreditCard",
+  "paymentDetails": {
+    "cardNumber": "4111111111111111",
+    "expiryDate": "12/25",
+    "cvv": "123",
+    "cardHolderName": "Test User"
+  },
+  "notes": "Entrega de 9am a 5pm"
+}
+
+### 7. Get user orders
+GET {{baseUrl}}/api/orders
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### 8. Get specific order by ID
+GET {{baseUrl}}/api/orders/YOUR_ORDER_ID_HERE
+Authorization: Bearer YOUR_TOKEN_HERE
+
+### 9. Cancel order
+POST {{baseUrl}}/api/orders/YOUR_ORDER_ID_HERE/cancel
+Content-Type: {{contentType}}
+Authorization: Bearer YOUR_TOKEN_HERE
+
+{
+  "reason": "Changed my mind"
+}
+
+### Admin Endpoints (require admin token)
+
+### 10. Get all orders (admin)
+GET {{baseUrl}}/api/admin/orders
+Authorization: Bearer YOUR_ADMIN_TOKEN_HERE
+
+### 11. Update order status (admin)
+POST {{baseUrl}}/api/admin/orders/YOUR_ORDER_ID_HERE/status
+Content-Type: {{contentType}}
+Authorization: Bearer YOUR_ADMIN_TOKEN_HERE
+
+{
+  "status": "Processing",
+  "note": "Order is being prepared"
+}
